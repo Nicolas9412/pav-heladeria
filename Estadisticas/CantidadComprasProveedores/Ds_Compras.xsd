@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Ds_Compras" targetNamespace="http://tempuri.org/Ds_Compras.xsd" xmlns:mstns="http://tempuri.org/Ds_Compras.xsd" xmlns="http://tempuri.org/Ds_Compras.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Ds_Compras" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Ds_Compras" msprop:Generator_UserDSName="Ds_Compras">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EstadisticaCompras" msprop:Generator_TableClassName="EstadisticaComprasDataTable" msprop:Generator_TableVarName="tableEstadisticaCompras" msprop:Generator_TablePropName="EstadisticaCompras" msprop:Generator_RowDeletingName="EstadisticaComprasRowDeleting" msprop:Generator_RowChangingName="EstadisticaComprasRowChanging" msprop:Generator_RowEvHandlerName="EstadisticaComprasRowChangeEventHandler" msprop:Generator_RowDeletedName="EstadisticaComprasRowDeleted" msprop:Generator_UserTableName="EstadisticaCompras" msprop:Generator_RowChangedName="EstadisticaComprasRowChanged" msprop:Generator_RowEvArgName="EstadisticaComprasRowChangeEvent" msprop:Generator_RowClassName="EstadisticaComprasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RazonSocial" msprop:Generator_ColumnVarNameInTable="columnRazonSocial" msprop:Generator_ColumnPropNameInRow="RazonSocial" msprop:Generator_ColumnPropNameInTable="RazonSocialColumn" msprop:Generator_UserColumnName="RazonSocial" type="xs:string" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
