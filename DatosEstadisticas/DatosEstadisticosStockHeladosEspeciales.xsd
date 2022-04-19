@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatosEstadisticosStockHeladosEspeciales" targetNamespace="http://tempuri.org/DatosEstadisticosStockHeladosEspeciales.xsd" xmlns:mstns="http://tempuri.org/DatosEstadisticosStockHeladosEspeciales.xsd" xmlns="http://tempuri.org/DatosEstadisticosStockHeladosEspeciales.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DatosEstadisticosStockHeladosEspeciales" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosEstadisticosStockHeladosEspeciales" msprop:Generator_UserDSName="DatosEstadisticosStockHeladosEspeciales">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DatosEstadisticosStockHeladosEspeciales" msprop:Generator_TableClassName="DatosEstadisticosStockHeladosEspecialesDataTable" msprop:Generator_TableVarName="tableDatosEstadisticosStockHeladosEspeciales" msprop:Generator_TablePropName="_DatosEstadisticosStockHeladosEspeciales" msprop:Generator_RowDeletingName="DatosEstadisticosStockHeladosEspecialesRowDeleting" msprop:Generator_RowChangingName="DatosEstadisticosStockHeladosEspecialesRowChanging" msprop:Generator_RowEvHandlerName="DatosEstadisticosStockHeladosEspecialesRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosEstadisticosStockHeladosEspecialesRowDeleted" msprop:Generator_UserTableName="DatosEstadisticosStockHeladosEspeciales" msprop:Generator_RowChangedName="DatosEstadisticosStockHeladosEspecialesRowChanged" msprop:Generator_RowEvArgName="DatosEstadisticosStockHeladosEspecialesRowChangeEvent" msprop:Generator_RowClassName="DatosEstadisticosStockHeladosEspecialesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NombreProducto" msprop:Generator_ColumnVarNameInTable="columnNombreProducto" msprop:Generator_ColumnPropNameInRow="NombreProducto" msprop:Generator_ColumnPropNameInTable="NombreProductoColumn" msprop:Generator_UserColumnName="NombreProducto" type="xs:string" minOccurs="0" />
+              <xs:element name="CantidadStock" msprop:Generator_ColumnVarNameInTable="columnCantidadStock" msprop:Generator_ColumnPropNameInRow="CantidadStock" msprop:Generator_ColumnPropNameInTable="CantidadStockColumn" msprop:Generator_UserColumnName="CantidadStock" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

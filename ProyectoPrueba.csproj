@@ -1,0 +1,1254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E1A85F0-F735-4AE9-B533-468B875892E0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Practico</RootNamespace>
+    <AssemblyName>Practico</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\BaseDatos.cs" />
+    <Compile Include="Clases\ComboBox01.cs" />
+    <Compile Include="Clases\EstructuraComboBox.cs" />
+    <Compile Include="Clases\Grid01.cs" />
+    <Compile Include="Clases\LabelText01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clases\LabelText01.Designer.cs">
+      <DependentUpon>LabelText01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\LabelText02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clases\LabelText02.designer.cs">
+      <DependentUpon>LabelText02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\TextBox01.cs" />
+    <Compile Include="Clases\TextBox02.cs" />
+    <Compile Include="Clases\TratamientosEspeciales.cs" />
+    <Compile Include="DatosEstadisticas\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticas\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticas\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticas\DatosEstadisticosPreciosHelados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticosPreciosHelados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticas\DatosEstadisticosProveedoresLocalidadxsd.cs">
+      <DependentUpon>DatosEstadisticosProveedoresLocalidadxsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticas\DatosEstadisticosProveedoresLocalidadxsd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticosProveedoresLocalidadxsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticas\DatosEstadisticosStockHeladosEspeciales.cs">
+      <DependentUpon>DatosEstadisticosStockHeladosEspeciales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticas\DatosEstadisticosStockHeladosEspeciales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticosStockHeladosEspeciales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticas\DatosEstadisticosVentasTurno.cs">
+      <DependentUpon>DatosEstadisticosVentasTurno.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticas\DatosEstadisticosVentasTurno.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticosVentasTurno.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Barrios\FrmAltaBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Barrios\FrmAltaBarrios.Designer.cs">
+      <DependentUpon>FrmAltaBarrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Barrios\FrmBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Barrios\FrmBarrios.Designer.cs">
+      <DependentUpon>FrmBarrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Barrios\FrmConsultarBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Barrios\FrmConsultarBarrios.Designer.cs">
+      <DependentUpon>FrmConsultarBarrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Barrios\FrmEliminarBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Barrios\FrmEliminarBarrios.Designer.cs">
+      <DependentUpon>FrmEliminarBarrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Barrios\FrmModificarBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Barrios\FrmModificarBarrios.Designer.cs">
+      <DependentUpon>FrmModificarBarrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Empleados\FrmAltaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Empleados\FrmAltaEmpleados.Designer.cs">
+      <DependentUpon>FrmAltaEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Empleados\FrmConsultarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Empleados\FrmConsultarEmpleados.designer.cs">
+      <DependentUpon>FrmConsultarEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Empleados\FrmEliminarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Empleados\FrmEliminarEmpleados.designer.cs">
+      <DependentUpon>FrmEliminarEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Empleados\FrmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Empleados\FrmEmpleados.Designer.cs">
+      <DependentUpon>FrmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Empleados\FrmModificarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Empleados\FrmModificarEmpleados.designer.cs">
+      <DependentUpon>FrmModificarEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\FrutasHeladosEspeciales\FrmAltaFrutaHeladoEspecial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\FrutasHeladosEspeciales\FrmAltaFrutaHeladoEspecial.Designer.cs">
+      <DependentUpon>FrmAltaFrutaHeladoEspecial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\FrutasHeladosEspeciales\FrmConsultarFrutaHeladoEspecial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\FrutasHeladosEspeciales\FrmConsultarFrutaHeladoEspecial.designer.cs">
+      <DependentUpon>FrmConsultarFrutaHeladoEspecial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\FrutasHeladosEspeciales\FrmEliminarFrutaHeladoEspecial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\FrutasHeladosEspeciales\FrmEliminarFrutaHeladoEspecial.designer.cs">
+      <DependentUpon>FrmEliminarFrutaHeladoEspecial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\FrutasHeladosEspeciales\FrmFrutasHeladosEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\FrutasHeladosEspeciales\FrmFrutasHeladosEspeciales.Designer.cs">
+      <DependentUpon>FrmFrutasHeladosEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\FrutasHeladosEspeciales\FrmModificarFrutaHeladoEspecial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\FrutasHeladosEspeciales\FrmModificarFrutaHeladoEspecial.designer.cs">
+      <DependentUpon>FrmModificarFrutaHeladoEspecial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Frutas\FrmAltaFrutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Frutas\FrmAltaFrutas.Designer.cs">
+      <DependentUpon>FrmAltaFrutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Frutas\FrmConsultarFrutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Frutas\FrmConsultarFrutas.Designer.cs">
+      <DependentUpon>FrmConsultarFrutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Frutas\FrmEliminarFrutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Frutas\FrmEliminarFrutas.Designer.cs">
+      <DependentUpon>FrmEliminarFrutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Frutas\FrmFrutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Frutas\FrmFrutas.Designer.cs">
+      <DependentUpon>FrmFrutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Frutas\FrmModificarFrutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Frutas\FrmModificarFrutas.Designer.cs">
+      <DependentUpon>FrmModificarFrutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosEspeciales\FrmAltaHeladosEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosEspeciales\FrmAltaHeladosEspeciales.Designer.cs">
+      <DependentUpon>FrmAltaHeladosEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosEspeciales\FrmConsultarHeladosEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosEspeciales\FrmConsultarHeladosEspeciales.Designer.cs">
+      <DependentUpon>FrmConsultarHeladosEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosEspeciales\FrmEliminarHeladosEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosEspeciales\FrmEliminarHeladosEspeciales.Designer.cs">
+      <DependentUpon>FrmEliminarHeladosEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosEspeciales\FrmHeladosEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosEspeciales\FrmHeladosEspeciales.Designer.cs">
+      <DependentUpon>FrmHeladosEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosEspeciales\FrmModificarHeladosEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosEspeciales\FrmModificarHeladosEspeciales.Designer.cs">
+      <DependentUpon>FrmModificarHeladosEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosHeladosEspeciales\FrmAltaHeladosHeladosEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosHeladosEspeciales\FrmAltaHeladosHeladosEspeciales.Designer.cs">
+      <DependentUpon>FrmAltaHeladosHeladosEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosHeladosEspeciales\FrmConsultarHeladosHeladosEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosHeladosEspeciales\FrmConsultarHeladosHeladosEspeciales.Designer.cs">
+      <DependentUpon>FrmConsultarHeladosHeladosEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosHeladosEspeciales\FrmEliminarHeladosHeladosEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosHeladosEspeciales\FrmEliminarHeladosHeladosEspeciales.Designer.cs">
+      <DependentUpon>FrmEliminarHeladosHeladosEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosHeladosEspeciales\FrmHeladosHeladosEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosHeladosEspeciales\FrmHeladosHeladosEspeciales.Designer.cs">
+      <DependentUpon>FrmHeladosHeladosEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosHeladosEspeciales\FrmModificarHeladosHeladosEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\HeladosHeladosEspeciales\FrmModificarHeladosHeladosEspeciales.Designer.cs">
+      <DependentUpon>FrmModificarHeladosHeladosEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Helados\FrmAltaHelados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Helados\FrmAltaHelados.Designer.cs">
+      <DependentUpon>FrmAltaHelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Helados\FrmConsultarHelados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Helados\FrmConsultarHelados.designer.cs">
+      <DependentUpon>FrmConsultarHelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Helados\FrmEliminarHelados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Helados\FrmEliminarHelados.designer.cs">
+      <DependentUpon>FrmEliminarHelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Helados\FrmHelados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Helados\FrmHelados.Designer.cs">
+      <DependentUpon>FrmHelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Helados\FrmModificarHelados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Helados\FrmModificarHelados.designer.cs">
+      <DependentUpon>FrmModificarHelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Localidades\FrmAltaLocalidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Localidades\FrmAltaLocalidades.designer.cs">
+      <DependentUpon>FrmAltaLocalidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Localidades\FrmLocalidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Localidades\FrmLocalidades.designer.cs">
+      <DependentUpon>FrmLocalidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Localidades\FrmModificarLocalidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Localidades\FrmModificarLocalidades.designer.cs">
+      <DependentUpon>FrmModificarLocalidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\ProveedoresHelados\FrmAltaProveedoresHelados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\ProveedoresHelados\FrmAltaProveedoresHelados.Designer.cs">
+      <DependentUpon>FrmAltaProveedoresHelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\ProveedoresHelados\FrmConsultarProveedoresHelados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\ProveedoresHelados\FrmConsultarProveedoresHelados.Designer.cs">
+      <DependentUpon>FrmConsultarProveedoresHelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\ProveedoresHelados\FrmEliminarProveedoresHelados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\ProveedoresHelados\FrmEliminarProveedoresHelados.Designer.cs">
+      <DependentUpon>FrmEliminarProveedoresHelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\ProveedoresHelados\FrmModificarProveedoresHelados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\ProveedoresHelados\FrmModificarProveedoresHelados.Designer.cs">
+      <DependentUpon>FrmModificarProveedoresHelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\ProveedoresHelados\FrmProveedoresHelados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\ProveedoresHelados\FrmProveedoresHelados.Designer.cs">
+      <DependentUpon>FrmProveedoresHelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Proveedores\FrmAltaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Proveedores\FrmAltaProveedores.Designer.cs">
+      <DependentUpon>FrmAltaProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Proveedores\FrmConsultarProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Proveedores\FrmConsultarProveedores.Designer.cs">
+      <DependentUpon>FrmConsultarProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Proveedores\FrmEliminarProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Proveedores\FrmEliminarProveedores.Designer.cs">
+      <DependentUpon>FrmEliminarProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Proveedores\FrmModificarProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Proveedores\FrmModificarProveedores.Designer.cs">
+      <DependentUpon>FrmModificarProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Proveedores\FrmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Proveedores\FrmProveedores.Designer.cs">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\TelefonosEmpleados\FrmAltaTelefonosEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\TelefonosEmpleados\FrmAltaTelefonosEmpleados.Designer.cs">
+      <DependentUpon>FrmAltaTelefonosEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\TelefonosEmpleados\FrmConsultarTelefonosEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\TelefonosEmpleados\FrmConsultarTelefonosEmpleados.designer.cs">
+      <DependentUpon>FrmConsultarTelefonosEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\TelefonosEmpleados\FrmEliminarTelefonosEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\TelefonosEmpleados\FrmEliminarTelefonosEmpleados.designer.cs">
+      <DependentUpon>FrmEliminarTelefonosEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\TelefonosEmpleados\FrmModificarTelefonosEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\TelefonosEmpleados\FrmModificarTelefonosEmpleados.designer.cs">
+      <DependentUpon>FrmModificarTelefonosEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\TelefonosEmpleados\FrmTelefonosEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\TelefonosEmpleados\FrmTelefonosEmpleados.Designer.cs">
+      <DependentUpon>FrmTelefonosEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\TipoDocumento\FrmAltaTipoDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\TipoDocumento\FrmAltaTipoDocumento.designer.cs">
+      <DependentUpon>FrmAltaTipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\TipoDocumento\FrmModificarTipoDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\TipoDocumento\FrmModificarTipoDocumento.designer.cs">
+      <DependentUpon>FrmModificarTipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\TipoDocumento\FrmTipoDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\TipoDocumento\FrmTipoDocumento.designer.cs">
+      <DependentUpon>FrmTipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Turnos\FrmAltaTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Turnos\FrmAltaTurnos.Designer.cs">
+      <DependentUpon>FrmAltaTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Turnos\FrmConsultarTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Turnos\FrmConsultarTurnos.Designer.cs">
+      <DependentUpon>FrmConsultarTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Turnos\FrmEliminarTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Turnos\FrmEliminarTurnos.Designer.cs">
+      <DependentUpon>FrmEliminarTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Turnos\FrmModificarTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Turnos\FrmModificarTurnos.Designer.cs">
+      <DependentUpon>FrmModificarTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Turnos\FrmTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Turnos\FrmTurnos.Designer.cs">
+      <DependentUpon>FrmTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Usuarios\FrmAltaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Usuarios\FrmAltaUsuarios.Designer.cs">
+      <DependentUpon>FrmAltaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Usuarios\FrmConsultarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Usuarios\FrmConsultarUsuarios.designer.cs">
+      <DependentUpon>FrmConsultarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Usuarios\FrmEliminarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Usuarios\FrmEliminarUsuarios.designer.cs">
+      <DependentUpon>FrmEliminarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Usuarios\FrmModificarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Usuarios\FrmModificarUsuarios.designer.cs">
+      <DependentUpon>FrmModificarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Abm\Usuarios\FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Abm\Usuarios\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\CantidadBarriosLocalidad\FrmEstadisticaCantidadBarriosLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\CantidadBarriosLocalidad\FrmEstadisticaCantidadBarriosLocalidad.Designer.cs">
+      <DependentUpon>FrmEstadisticaCantidadBarriosLocalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\CantidadComprasProveedores\FrmCantidadComprasProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\CantidadComprasProveedores\FrmCantidadComprasProveedores.Designer.cs">
+      <DependentUpon>FrmCantidadComprasProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\CantidadComprasProveedores\Ds_Compras.cs">
+      <DependentUpon>Ds_Compras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\CantidadComprasProveedores\Ds_Compras.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_Compras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\CantidadEmpleadosBarrio\FrmEstadisticaCantidadEmpleadosBarrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\CantidadEmpleadosBarrio\FrmEstadisticaCantidadEmpleadosBarrio.Designer.cs">
+      <DependentUpon>FrmEstadisticaCantidadEmpleadosBarrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\CantidadVentasEmpleados\FrmEstadisticaCantidadVentasEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\CantidadVentasEmpleados\FrmEstadisticaCantidadVentasEmpleados.Designer.cs">
+      <DependentUpon>FrmEstadisticaCantidadVentasEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\EmpleadosPorTurno\Ds_Empleados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_Empleados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\EmpleadosPorTurno\FrmEmpleadosPorTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\EmpleadosPorTurno\FrmEmpleadosPorTurno.Designer.cs">
+      <DependentUpon>FrmEmpleadosPorTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\PrecioHelados\FrmEstadisticasPreciosHelados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\PrecioHelados\FrmEstadisticasPreciosHelados.Designer.cs">
+      <DependentUpon>FrmEstadisticasPreciosHelados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\ProveedoresXLocalidad\FrmEstadisticaProveedoresLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\ProveedoresXLocalidad\FrmEstadisticaProveedoresLocalidad.Designer.cs">
+      <DependentUpon>FrmEstadisticaProveedoresLocalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\StockHeladosEspeciales\FrmEstadisticasStockHeladosEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\StockHeladosEspeciales\FrmEstadisticasStockHeladosEspeciales.Designer.cs">
+      <DependentUpon>FrmEstadisticasStockHeladosEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\VentasPorHeladosPeriodo\FrmEstadisticaVentasPorHeladosPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\VentasPorHeladosPeriodo\FrmEstadisticaVentasPorHeladosPeriodo.Designer.cs">
+      <DependentUpon>FrmEstadisticaVentasPorHeladosPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\VentasXTurno\FrmEstadisticaVentasTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\VentasXTurno\FrmEstadisticaVentasTurno.Designer.cs">
+      <DependentUpon>FrmEstadisticaVentasTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Listados\EmpleadosEdad\FrmListadoEmpleadosEdad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\EmpleadosEdad\FrmListadoEmpleadosEdad.designer.cs">
+      <DependentUpon>FrmListadoEmpleadosEdad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Listados\EmpleadosFecha\Frm_listadoEmpleadosFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\EmpleadosFecha\Frm_listadoEmpleadosFecha.Designer.cs">
+      <DependentUpon>Frm_listadoEmpleadosFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Listados\EmpleadosLocalidad\FrmListadoEmpleadosLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\EmpleadosLocalidad\FrmListadoEmpleadosLocalidad.Designer.cs">
+      <DependentUpon>FrmListadoEmpleadosLocalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Listados\EmpleadosTurno\FrmListadoEmpleadosTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\EmpleadosTurno\FrmListadoEmpleadosTurno.Designer.cs">
+      <DependentUpon>FrmListadoEmpleadosTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Listados\Frutas\FrmListadoFrutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\Frutas\FrmListadoFrutas.Designer.cs">
+      <DependentUpon>FrmListadoFrutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Listados\HeladosEspecialesPrecio\FrmListadoHeladosEspecialesPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\HeladosEspecialesPrecio\FrmListadoHeladosEspecialesPrecio.designer.cs">
+      <DependentUpon>FrmListadoHeladosEspecialesPrecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Listados\HeladosPrecio\Frm_listadoHeladosPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\HeladosPrecio\Frm_listadoHeladosPrecio.Designer.cs">
+      <DependentUpon>Frm_listadoHeladosPrecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Listados\HeladosProveedor\FrmListadoHeladosProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\HeladosProveedor\FrmListadoHeladosProveedor.Designer.cs">
+      <DependentUpon>FrmListadoHeladosProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Listados\ProveedoresBarrio\FrmListadoProveedoresBarrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\ProveedoresBarrio\FrmListadoProveedoresBarrio.Designer.cs">
+      <DependentUpon>FrmListadoProveedoresBarrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Listados\Ventas\FrmListadoVentasEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Listados\Ventas\FrmListadoVentasEmpleado.Designer.cs">
+      <DependentUpon>FrmListadoVentasEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Presentacion\FrmAdministracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Presentacion\FrmAdministracion.Designer.cs">
+      <DependentUpon>FrmAdministracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Presentacion\FrmEscritorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Presentacion\FrmEscritorio.Designer.cs">
+      <DependentUpon>FrmEscritorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Presentacion\FrmEstadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Presentacion\FrmEstadisticas.Designer.cs">
+      <DependentUpon>FrmEstadisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Presentacion\FrmListados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Presentacion\FrmListados.Designer.cs">
+      <DependentUpon>FrmListados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Presentacion\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Presentacion\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Compra\FrmAltaCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Compra\FrmAltaCompras.designer.cs">
+      <DependentUpon>FrmAltaCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Compra\FrmCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Compra\FrmCompras.Designer.cs">
+      <DependentUpon>FrmCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Compra\FrmConsultarCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Compra\FrmConsultarCompras.designer.cs">
+      <DependentUpon>FrmConsultarCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Compra\FrmModificarCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Compra\FrmModificarCompras.designer.cs">
+      <DependentUpon>FrmModificarCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Venta\FrmAltaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Venta\FrmAltaVenta.Designer.cs">
+      <DependentUpon>FrmAltaVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Venta\FrmConsultarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Venta\FrmConsultarVenta.designer.cs">
+      <DependentUpon>FrmConsultarVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Venta\FrmModificarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Venta\FrmModificarVenta.designer.cs">
+      <DependentUpon>FrmModificarVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Venta\FrmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\Venta\FrmVenta.Designer.cs">
+      <DependentUpon>FrmVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeladeriaPAVDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HeladeriaPAVDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Negocios\Compras.cs" />
+    <Compile Include="Negocios\DetallesCompras.cs" />
+    <Compile Include="Negocios\DetalleVentas.cs" />
+    <Compile Include="Negocios\HeladosHeladosEspeciales.cs" />
+    <Compile Include="Negocios\FrutasHeladosEspeciales.cs" />
+    <Compile Include="Negocios\HeladosEspeciales.cs" />
+    <Compile Include="Negocios\Turnos.cs" />
+    <Compile Include="Negocios\Empleados.cs" />
+    <Compile Include="Negocios\Barrios.cs" />
+    <Compile Include="Negocios\Frutas.cs" />
+    <Compile Include="Negocios\Helados.cs" />
+    <Compile Include="Negocios\Localidades.cs" />
+    <Compile Include="Negocios\Proveedores.cs" />
+    <Compile Include="Negocios\ProveedoresHelados.cs" />
+    <Compile Include="Negocios\TelefonosEmpleados.cs" />
+    <Compile Include="Negocios\TipoDocumento.cs" />
+    <Compile Include="Negocios\Usuarios.cs" />
+    <Compile Include="Negocios\Ventas.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Clases\LabelText01.resx">
+      <DependentUpon>LabelText01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clases\LabelText02.resx">
+      <DependentUpon>LabelText02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Barrios\FrmAltaBarrios.resx">
+      <DependentUpon>FrmAltaBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Barrios\FrmBarrios.resx">
+      <DependentUpon>FrmBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Barrios\FrmConsultarBarrios.resx">
+      <DependentUpon>FrmConsultarBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Barrios\FrmEliminarBarrios.resx">
+      <DependentUpon>FrmEliminarBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Barrios\FrmModificarBarrios.resx">
+      <DependentUpon>FrmModificarBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Empleados\FrmAltaEmpleados.resx">
+      <DependentUpon>FrmAltaEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Empleados\FrmConsultarEmpleados.resx">
+      <DependentUpon>FrmConsultarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Empleados\FrmEliminarEmpleados.resx">
+      <DependentUpon>FrmEliminarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Empleados\FrmEmpleados.resx">
+      <DependentUpon>FrmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Empleados\FrmModificarEmpleados.resx">
+      <DependentUpon>FrmModificarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\FrutasHeladosEspeciales\FrmAltaFrutaHeladoEspecial.resx">
+      <DependentUpon>FrmAltaFrutaHeladoEspecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\FrutasHeladosEspeciales\FrmConsultarFrutaHeladoEspecial.resx">
+      <DependentUpon>FrmConsultarFrutaHeladoEspecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\FrutasHeladosEspeciales\FrmEliminarFrutaHeladoEspecial.resx">
+      <DependentUpon>FrmEliminarFrutaHeladoEspecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\FrutasHeladosEspeciales\FrmFrutasHeladosEspeciales.resx">
+      <DependentUpon>FrmFrutasHeladosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\FrutasHeladosEspeciales\FrmModificarFrutaHeladoEspecial.resx">
+      <DependentUpon>FrmModificarFrutaHeladoEspecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Frutas\FrmAltaFrutas.resx">
+      <DependentUpon>FrmAltaFrutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Frutas\FrmConsultarFrutas.resx">
+      <DependentUpon>FrmConsultarFrutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Frutas\FrmEliminarFrutas.resx">
+      <DependentUpon>FrmEliminarFrutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Frutas\FrmFrutas.resx">
+      <DependentUpon>FrmFrutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Frutas\FrmModificarFrutas.resx">
+      <DependentUpon>FrmModificarFrutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\HeladosEspeciales\FrmAltaHeladosEspeciales.resx">
+      <DependentUpon>FrmAltaHeladosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\HeladosEspeciales\FrmConsultarHeladosEspeciales.resx">
+      <DependentUpon>FrmConsultarHeladosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\HeladosEspeciales\FrmEliminarHeladosEspeciales.resx">
+      <DependentUpon>FrmEliminarHeladosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\HeladosEspeciales\FrmHeladosEspeciales.resx">
+      <DependentUpon>FrmHeladosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\HeladosEspeciales\FrmModificarHeladosEspeciales.resx">
+      <DependentUpon>FrmModificarHeladosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\HeladosHeladosEspeciales\FrmAltaHeladosHeladosEspeciales.resx">
+      <DependentUpon>FrmAltaHeladosHeladosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\HeladosHeladosEspeciales\FrmConsultarHeladosHeladosEspeciales.resx">
+      <DependentUpon>FrmConsultarHeladosHeladosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\HeladosHeladosEspeciales\FrmEliminarHeladosHeladosEspeciales.resx">
+      <DependentUpon>FrmEliminarHeladosHeladosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\HeladosHeladosEspeciales\FrmHeladosHeladosEspeciales.resx">
+      <DependentUpon>FrmHeladosHeladosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\HeladosHeladosEspeciales\FrmModificarHeladosHeladosEspeciales.resx">
+      <DependentUpon>FrmModificarHeladosHeladosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Helados\FrmAltaHelados.resx">
+      <DependentUpon>FrmAltaHelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Helados\FrmConsultarHelados.resx">
+      <DependentUpon>FrmConsultarHelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Helados\FrmEliminarHelados.resx">
+      <DependentUpon>FrmEliminarHelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Helados\FrmHelados.resx">
+      <DependentUpon>FrmHelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Helados\FrmModificarHelados.resx">
+      <DependentUpon>FrmModificarHelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Localidades\FrmAltaLocalidades.resx">
+      <DependentUpon>FrmAltaLocalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Localidades\FrmLocalidades.resx">
+      <DependentUpon>FrmLocalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Localidades\FrmModificarLocalidades.resx">
+      <DependentUpon>FrmModificarLocalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\ProveedoresHelados\FrmAltaProveedoresHelados.resx">
+      <DependentUpon>FrmAltaProveedoresHelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\ProveedoresHelados\FrmConsultarProveedoresHelados.resx">
+      <DependentUpon>FrmConsultarProveedoresHelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\ProveedoresHelados\FrmEliminarProveedoresHelados.resx">
+      <DependentUpon>FrmEliminarProveedoresHelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\ProveedoresHelados\FrmModificarProveedoresHelados.resx">
+      <DependentUpon>FrmModificarProveedoresHelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\ProveedoresHelados\FrmProveedoresHelados.resx">
+      <DependentUpon>FrmProveedoresHelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Proveedores\FrmAltaProveedores.resx">
+      <DependentUpon>FrmAltaProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Proveedores\FrmConsultarProveedores.resx">
+      <DependentUpon>FrmConsultarProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Proveedores\FrmEliminarProveedores.resx">
+      <DependentUpon>FrmEliminarProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Proveedores\FrmModificarProveedores.resx">
+      <DependentUpon>FrmModificarProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Proveedores\FrmProveedores.resx">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\TelefonosEmpleados\FrmAltaTelefonosEmpleados.resx">
+      <DependentUpon>FrmAltaTelefonosEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\TelefonosEmpleados\FrmConsultarTelefonosEmpleados.resx">
+      <DependentUpon>FrmConsultarTelefonosEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\TelefonosEmpleados\FrmEliminarTelefonosEmpleados.resx">
+      <DependentUpon>FrmEliminarTelefonosEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\TelefonosEmpleados\FrmModificarTelefonosEmpleados.resx">
+      <DependentUpon>FrmModificarTelefonosEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\TelefonosEmpleados\FrmTelefonosEmpleados.resx">
+      <DependentUpon>FrmTelefonosEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\TipoDocumento\FrmAltaTipoDocumento.resx">
+      <DependentUpon>FrmAltaTipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\TipoDocumento\FrmModificarTipoDocumento.resx">
+      <DependentUpon>FrmModificarTipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\TipoDocumento\FrmTipoDocumento.resx">
+      <DependentUpon>FrmTipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Turnos\FrmAltaTurnos.resx">
+      <DependentUpon>FrmAltaTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Turnos\FrmConsultarTurnos.resx">
+      <DependentUpon>FrmConsultarTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Turnos\FrmEliminarTurnos.resx">
+      <DependentUpon>FrmEliminarTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Turnos\FrmModificarTurnos.resx">
+      <DependentUpon>FrmModificarTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Turnos\FrmTurnos.resx">
+      <DependentUpon>FrmTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Usuarios\FrmAltaUsuarios.resx">
+      <DependentUpon>FrmAltaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Usuarios\FrmConsultarUsuarios.resx">
+      <DependentUpon>FrmConsultarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Usuarios\FrmEliminarUsuarios.resx">
+      <DependentUpon>FrmEliminarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Usuarios\FrmModificarUsuarios.resx">
+      <DependentUpon>FrmModificarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Abm\Usuarios\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estadisticas\CantidadBarriosLocalidad\CantidadBarriosLocalidad.rdlc" />
+    <EmbeddedResource Include="Formularios\Estadisticas\CantidadBarriosLocalidad\FrmEstadisticaCantidadBarriosLocalidad.resx">
+      <DependentUpon>FrmEstadisticaCantidadBarriosLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estadisticas\CantidadComprasProveedores\CantidadComprasProveedores.rdlc" />
+    <EmbeddedResource Include="Formularios\Estadisticas\CantidadComprasProveedores\FrmCantidadComprasProveedores.resx">
+      <DependentUpon>FrmCantidadComprasProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estadisticas\CantidadEmpleadosBarrio\CantidadEmpleadosBarrio.rdlc" />
+    <EmbeddedResource Include="Formularios\Estadisticas\CantidadEmpleadosBarrio\FrmEstadisticaCantidadEmpleadosBarrio.resx">
+      <DependentUpon>FrmEstadisticaCantidadEmpleadosBarrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estadisticas\CantidadVentasEmpleados\FrmEstadisticaCantidadVentasEmpleados.resx">
+      <DependentUpon>FrmEstadisticaCantidadVentasEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estadisticas\CantidadVentasEmpleados\CantidadVentasEmpleados.rdlc" />
+    <EmbeddedResource Include="Formularios\Estadisticas\EmpleadosPorTurno\EmpleadosPorTurno.rdlc" />
+    <EmbeddedResource Include="Formularios\Estadisticas\EmpleadosPorTurno\FrmEmpleadosPorTurno.resx">
+      <DependentUpon>FrmEmpleadosPorTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estadisticas\PrecioHelados\EstadisticasPreciosHelados.rdlc" />
+    <EmbeddedResource Include="Formularios\Estadisticas\PrecioHelados\FrmEstadisticasPreciosHelados.resx">
+      <DependentUpon>FrmEstadisticasPreciosHelados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estadisticas\ProveedoresXLocalidad\EstadisticaProveedoresLocalidad.rdlc" />
+    <EmbeddedResource Include="Formularios\Estadisticas\ProveedoresXLocalidad\FrmEstadisticaProveedoresLocalidad.resx">
+      <DependentUpon>FrmEstadisticaProveedoresLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estadisticas\StockHeladosEspeciales\EstadisticasStockHeladosEspeciales.rdlc" />
+    <EmbeddedResource Include="Formularios\Estadisticas\StockHeladosEspeciales\FrmEstadisticasStockHeladosEspeciales.resx">
+      <DependentUpon>FrmEstadisticasStockHeladosEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estadisticas\VentasPorHeladosPeriodo\FrmEstadisticaVentasPorHeladosPeriodo.resx">
+      <DependentUpon>FrmEstadisticaVentasPorHeladosPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estadisticas\VentasPorHeladosPeriodo\EstadisticaTotalesPorHelados.rdlc" />
+    <EmbeddedResource Include="Formularios\Estadisticas\VentasXTurno\FrmEstadisticaVentasTurno.resx">
+      <DependentUpon>FrmEstadisticaVentasTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estadisticas\VentasXTurno\EstadisticaVentasTurno.rdlc" />
+    <EmbeddedResource Include="Formularios\Listados\EmpleadosEdad\FrmListadoEmpleadosEdad.resx">
+      <DependentUpon>FrmListadoEmpleadosEdad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\EmpleadosEdad\ListadoEmpleadosEdad.rdlc" />
+    <EmbeddedResource Include="Formularios\Listados\EmpleadosFecha\Frm_listadoEmpleadosFecha.resx">
+      <DependentUpon>Frm_listadoEmpleadosFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\EmpleadosFecha\ReporteListadoEmpleadosFecha.rdlc" />
+    <EmbeddedResource Include="Formularios\Listados\EmpleadosLocalidad\FrmListadoEmpleadosLocalidad.resx">
+      <DependentUpon>FrmListadoEmpleadosLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\EmpleadosLocalidad\ListadoEmpleadosLocalidad.rdlc" />
+    <EmbeddedResource Include="Formularios\Listados\EmpleadosTurno\FrmListadoEmpleadosTurno.resx">
+      <DependentUpon>FrmListadoEmpleadosTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\EmpleadosTurno\ListadoEmpleadosTurno.rdlc" />
+    <EmbeddedResource Include="Formularios\Listados\Frutas\FrmListadoFrutas.resx">
+      <DependentUpon>FrmListadoFrutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\Frutas\ListadoFrutas.rdlc" />
+    <EmbeddedResource Include="Formularios\Listados\HeladosEspecialesPrecio\FrmListadoHeladosEspecialesPrecio.resx">
+      <DependentUpon>FrmListadoHeladosEspecialesPrecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\HeladosEspecialesPrecio\ListadoHeladosEspeciales.rdlc" />
+    <EmbeddedResource Include="Formularios\Listados\HeladosPrecio\Frm_listadoHeladosPrecio.resx">
+      <DependentUpon>Frm_listadoHeladosPrecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\HeladosPrecio\ReporteListadoHeladosPrecio.rdlc" />
+    <EmbeddedResource Include="Formularios\Listados\HeladosProveedor\FrmListadoHeladosProveedor.resx">
+      <DependentUpon>FrmListadoHeladosProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\HeladosProveedor\ListadoHeladosProveedor.rdlc" />
+    <EmbeddedResource Include="Formularios\Listados\ProveedoresBarrio\FrmListadoProveedoresBarrio.resx">
+      <DependentUpon>FrmListadoProveedoresBarrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\ProveedoresBarrio\ListadoProveedoresBarrio.rdlc" />
+    <EmbeddedResource Include="Formularios\Listados\Ventas\FrmListadoVentasEmpleado.resx">
+      <DependentUpon>FrmListadoVentasEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Listados\Ventas\ListadoVentasEmpleado.rdlc" />
+    <EmbeddedResource Include="Formularios\Presentacion\FrmAdministracion.resx">
+      <DependentUpon>FrmAdministracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Presentacion\FrmEscritorio.resx">
+      <DependentUpon>FrmEscritorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Presentacion\FrmEstadisticas.resx">
+      <DependentUpon>FrmEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Presentacion\FrmListados.resx">
+      <DependentUpon>FrmListados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Presentacion\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\Compra\FrmAltaCompras.resx">
+      <DependentUpon>FrmAltaCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\Compra\FrmCompras.resx">
+      <DependentUpon>FrmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\Compra\FrmConsultarCompras.resx">
+      <DependentUpon>FrmConsultarCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\Compra\FrmModificarCompras.resx">
+      <DependentUpon>FrmModificarCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\Venta\FrmAltaVenta.resx">
+      <DependentUpon>FrmAltaVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\Venta\FrmConsultarVenta.resx">
+      <DependentUpon>FrmConsultarVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\Venta\FrmModificarVenta.resx">
+      <DependentUpon>FrmModificarVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\Venta\FrmVenta.resx">
+      <DependentUpon>FrmVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DatosEstadisticas\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticas\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosEstadisticas\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticas\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticas\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosEstadisticas\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticas\DatosEstadisticosPreciosHelados.xsc">
+      <DependentUpon>DatosEstadisticosPreciosHelados.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticas\DatosEstadisticosPreciosHelados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticosPreciosHelados.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosEstadisticas\DatosEstadisticosPreciosHelados.xss">
+      <DependentUpon>DatosEstadisticosPreciosHelados.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticas\DatosEstadisticosProveedoresLocalidadxsd.xsc">
+      <DependentUpon>DatosEstadisticosProveedoresLocalidadxsd.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticas\DatosEstadisticosProveedoresLocalidadxsd.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticosProveedoresLocalidadxsd.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosEstadisticas\DatosEstadisticosProveedoresLocalidadxsd.xss">
+      <DependentUpon>DatosEstadisticosProveedoresLocalidadxsd.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticas\DatosEstadisticosStockHeladosEspeciales.xsc">
+      <DependentUpon>DatosEstadisticosStockHeladosEspeciales.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticas\DatosEstadisticosStockHeladosEspeciales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticosStockHeladosEspeciales.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosEstadisticas\DatosEstadisticosStockHeladosEspeciales.xss">
+      <DependentUpon>DatosEstadisticosStockHeladosEspeciales.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticas\DatosEstadisticosVentasTurno.xsc">
+      <DependentUpon>DatosEstadisticosVentasTurno.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticas\DatosEstadisticosVentasTurno.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticosVentasTurno.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosEstadisticas\DatosEstadisticosVentasTurno.xss">
+      <DependentUpon>DatosEstadisticosVentasTurno.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios\Estadisticas\CantidadComprasProveedores\Ds_Compras.xsc">
+      <DependentUpon>Ds_Compras.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios\Estadisticas\CantidadComprasProveedores\Ds_Compras.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_Compras.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Formularios\Estadisticas\CantidadComprasProveedores\Ds_Compras.xss">
+      <DependentUpon>Ds_Compras.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios\Estadisticas\EmpleadosPorTurno\Ds_Empleados.xsc">
+      <DependentUpon>Ds_Empleados.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios\Estadisticas\EmpleadosPorTurno\Ds_Empleados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_Empleados.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Formularios\Estadisticas\EmpleadosPorTurno\Ds_Empleados.xss">
+      <DependentUpon>Ds_Empleados.xsd</DependentUpon>
+    </None>
+    <None Include="HeladeriaPAVDataSet.xsc">
+      <DependentUpon>HeladeriaPAVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HeladeriaPAVDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HeladeriaPAVDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HeladeriaPAVDataSet.xss">
+      <DependentUpon>HeladeriaPAVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\usuarioMini.png" />
+    <None Include="Resources\logoEscritorio.png" />
+    <None Include="Resources\btnSalir.png" />
+    <None Include="Resources\btnInformes.png" />
+    <None Include="Resources\btnListados.png" />
+    <None Include="Resources\btnConfiguracion.png" />
+    <None Include="Resources\cajaRegitradoraNueva.png" />
+    <None Include="Resources\team.png" />
+    <None Include="Resources\iceCream.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\floppy-disk.png" />
+    <None Include="Resources\shopping-basket.png" />
+    <None Include="Resources\add-to-cart.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\carts.png" />
+    <None Include="Resources\shopping-cart.png" />
+    <None Include="Resources\shopping-cart1.png" />
+    <None Include="Resources\remove.png" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\magnifying-glass.png" />
+    <None Include="Resources\add-to-cart1.png" />
+    <None Include="Resources\iconfinder_website_-_pencil_3440848.png" />
+    <None Include="Resources\iconfinder_website_-_pencil_34408481.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\floppy-disk1.png" />
+    <None Include="Resources\eraser.png" />
+    <Content Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
